@@ -699,14 +699,37 @@ blockquote {
 /* Remove red accents */
 /* Buttons handled at end of file */
 
+/* ===== MODERN HEADER DESIGN ===== */
+
 .md-header {
-  background-color: #333333 !important;
-  border-bottom: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 4rem;
-  /* Fixed height for better control */
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  height: 4.5rem;
   display: flex !important;
   align-items: center !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(237, 28, 36, 0.6) 25%,
+      rgba(237, 28, 36, 0.8) 50%,
+      rgba(237, 28, 36, 0.6) 75%,
+      transparent 100%);
+  opacity: 0.8;
 }
 
 .md-header__inner {
@@ -714,25 +737,54 @@ blockquote {
   align-items: center !important;
   width: 100% !important;
   max-width: 1220px !important;
-  /* Standard content width for alignment */
   margin: 0 auto !important;
-  padding: 0 1rem !important;
+  padding: 0 2rem !important;
 }
 
 .md-header__title {
   color: #ffffff !important;
   font-weight: 700 !important;
-  font-size: 1.3rem !important;
-  /* Slightly larger as requested earlier */
+  font-size: 1.4rem !important;
   font-family: Helvetica, Arial, sans-serif !important;
-  padding-top: 4px;
-  /* "Опустить чуть ниже" to look vertically centered */
+  letter-spacing: 0.5px;
   margin-left: 0 !important;
-  /* Align with content container start */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.md-header__title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ed1c24, #ff4757);
+  transition: width 0.3s ease;
+}
+
+.md-header__title:hover::after {
+  width: 100%;
 }
 
 .md-header__button {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.md-header__button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
   color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* Scrolled state - more compact and subtle */
+.md-header.md-header--shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  height: 4rem;
 }
 
 .md-nav__link,
@@ -1364,8 +1416,10 @@ button:focus-visible {
 .md-typeset .md-button--primary,
 .md-typeset a.md-button,
 .md-typeset a.md-button:visited {
-  background-color: #dc2626 !important; /* Red - Design Rule */
-  color: #ffffff !important; /* White text - Design Rule */
+  background-color: #dc2626 !important;
+  /* Red - Design Rule */
+  color: #ffffff !important;
+  /* White text - Design Rule */
   border: 1px solid #dc2626 !important;
   font-weight: 700 !important;
   padding: 0.6rem 1.6rem !important;
@@ -1380,7 +1434,8 @@ button:focus-visible {
 .md-typeset .md-button:hover,
 .md-typeset .md-button--primary:hover,
 .md-typeset a.md-button:hover {
-  background-color: #b91c1c !important; /* Darker red on hover - Design Rule */
+  background-color: #b91c1c !important;
+  /* Darker red on hover - Design Rule */
   border-color: #b91c1c !important;
   opacity: 0.9 !important;
   color: #ffffff !important;
