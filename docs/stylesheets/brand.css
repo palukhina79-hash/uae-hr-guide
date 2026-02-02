@@ -1727,3 +1727,8 @@ img:not([src]) {
   background-size: 1000px 100%;
   animation: shimmer 2s infinite;
 }
+
+/* Ensure full width when sidebar is hidden on landing */
+[data-md-color-scheme="light"] .md-content {
+  margin-left: 0 !important;
+}

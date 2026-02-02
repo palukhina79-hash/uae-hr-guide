@@ -179,7 +179,7 @@
 {% endblock %}
 
 {% block site_nav %}
-{% if nav %}
+{% if nav and not "navigation" in (page.meta.hide or []) %}
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
   <div class="md-sidebar__scrollwrap">
 

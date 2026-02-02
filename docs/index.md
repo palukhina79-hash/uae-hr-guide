@@ -1,3 +1,15 @@
+---
+id: uae-hr-index
+jurisdiction: UAE
+topic: hr_guide
+section: general
+lang: ru
+confidentiality: PUBLIC
+hide:
+  - navigation
+  - toc
+---
+
 # UAE HR Guide
 
 Полное руководство по управлению персоналом в ОАЭ.
