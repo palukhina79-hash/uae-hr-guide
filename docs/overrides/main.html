@@ -179,7 +179,7 @@
 {% endblock %}
 
 {% block site_nav %}
-{% if nav and not "navigation" in (page.meta.hide or []) %}
+{% if nav and page and not "navigation" in (page.meta.hide or []) %}
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
   <div class="md-sidebar__scrollwrap">
 
@@ -212,7 +212,7 @@
 </div>
 {% endif %}
 
-{% if page.toc and (page.toc | first is defined) %}
+{% if page and page.toc and (page.toc | first is defined) %}
 <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">

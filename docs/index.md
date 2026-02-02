@@ -28,13 +28,13 @@ hide:
 <div class="card">
 <h4>Визы и разрешения</h4>
 <p>Employment visa, work permit, Emirates ID, смена спонсора.</p>
-<a href="02_визы_и_разрешения/021_employment_visa.md" class="md-button">Перейти →</a>
+<a href="02_визы_и_разрешения/021_рабочая_виза.md" class="md-button">Перейти →</a>
 </div>
 
 <div class="card">
 <h4>WPS и Payroll</h4>
 <p>Wage Protection System, расчёт зарплаты, end of service gratuity.</p>
-<a href="03_wps_и_payroll/031_wps_overview.md" class="md-button">Перейти →</a>
+<a href="03_wps_и_payroll/031_обзор_wps.md" class="md-button">Перейти →</a>
 </div>
 
 <div class="card">
