@@ -1389,7 +1389,24 @@ button:focus-visible {
 /* Target all green text and replace with red */
 .md-typeset .trend.up,
 .md-typeset .status.success,
-.md-typeset .alert.success {
+.md-typeset .alert.success,
+.md-typeset .admonition.success,
+.md-typeset .admonition.tip,
+.md-typeset .admonition.check {
+  border-left-color: #ed1c24 !important;
+  color: #ed1c24 !important;
+}
+
+.md-typeset .admonition.success>.admonition-title,
+.md-typeset .admonition.tip>.admonition-title,
+.md-typeset .admonition.check>.admonition-title {
+  background-color: rgba(237, 28, 36, 0.05) !important;
+  border-bottom-color: #ed1c24 !important;
+}
+
+.md-typeset .admonition.success>.admonition-title::before,
+.md-typeset .admonition.tip>.admonition-title::before,
+.md-typeset .admonition.check>.admonition-title::before {
   color: #ed1c24 !important;
 }
 
