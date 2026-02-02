@@ -1,0 +1,1389 @@
+/* UAE Business Setup KB - Clean B&W Style */
+/* Helvetica + Dark Blue/Gray Text */
+/* Red accents to be added later as needed */
+
+:root {
+  --dark-blue: #2c3e50;
+  --dark-text: #2c3e50;
+  --light-bg: #f9f9f9;
+  --border-light: #e0e0e0;
+  --gray-text: #666666;
+
+  /* Override Material theme colors */
+  --md-primary-fg-color: #2c3e50 !important;
+  --md-primary-bg-color: #ffffff !important;
+  --md-accent-fg-color: #2c3e50 !important;
+  --md-accent-bg-color: #ffffff !important;
+  --md-default-fg-color: #2c3e50 !important;
+  --md-default-bg-color: #ffffff !important;
+}
+
+/* ===== GLOBAL ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: var(--dark-text);
+  line-height: 1.6;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: var(--dark-text);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== TYPOGRAPHY - BIG SPACING ===== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  color: var(--dark-text) !important;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin: 1rem 0 1rem 0;
+  padding-bottom: 0.75rem;
+  color: var(--dark-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: none;
+  border-top: none;
+  padding-top: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 3rem 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  padding-top: 2rem;
+  color: var(--dark-text);
+  border-bottom: none;
+  border-top: 1px solid var(--border-light);
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 2.5rem 0 1rem 0;
+  padding-top: 1.5rem;
+  color: var(--dark-text) !important;
+  font-weight: 900 !important;
+  border-top: 1px solid #f0f0f0;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: 2rem 0 0.75rem 0;
+  padding-top: 1rem;
+  color: var(--dark-text) !important;
+  font-weight: 700;
+  border-top: 1px solid #f5f5f5;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--dark-text) !important;
+  font-weight: 700;
+}
+
+h6 {
+  color: var(--dark-text) !important;
+}
+
+/* Remove top border from first heading after h1 */
+h1+h2,
+.md-content__inner>h2:first-of-type,
+.md-typeset>h2:first-of-type {
+  border-top: none !important;
+  margin-top: 1.5rem;
+  padding-top: 0;
+}
+
+h2+h3,
+h1+h3 {
+  border-top: none !important;
+  padding-top: 0;
+}
+
+h3+h4,
+h2+h4 {
+  border-top: none !important;
+  padding-top: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+  /* Very thin, light line */
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--dark-text);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+em {
+  font-style: italic;
+  color: var(--dark-text);
+}
+
+/* ===== LINKS ===== */
+
+a {
+  color: #ed1c24 !important;
+  /* All links red as requested */
+  text-decoration: none;
+  transition: all 150ms ease;
+}
+
+a:hover {
+  color: #c41119 !important;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #ed1c24 !important;
+}
+
+/* ===== CODE ===== */
+
+code {
+  font-family: "Courier New", monospace;
+  background-color: var(--light-bg);
+  color: #333333;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+pre {
+  background-color: var(--light-bg);
+  border-left: 3px solid var(--gray-text);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  overflow-x: auto;
+  border-radius: 2px;
+  font-family: "Courier New", monospace;
+  line-height: 1.4;
+}
+
+pre code {
+  background: transparent;
+  color: var(--dark-text);
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ===== TABLES ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  border-bottom: 2px solid var(--border-light);
+}
+
+th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--dark-text);
+  background-color: var(--light-bg);
+}
+
+td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--dark-text);
+}
+
+tbody tr {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr:hover {
+  background-color: #fafafa;
+}
+
+/* ===== LISTS ===== */
+
+ul,
+ol {
+  margin: 1.5rem 0 1.5rem 2.5rem;
+  padding: 0;
+  display: block;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  color: var(--dark-text);
+  line-height: 1.7;
+  display: list-item;
+}
+
+/* Ensure proper list display in content */
+.md-typeset ul,
+.md-typeset ol {
+  display: block;
+  list-style-position: outside;
+}
+
+.md-typeset li {
+  display: list-item;
+}
+
+/* ===== INLINE ICONS (SVG) ===== */
+/* No emoji in content — all icons rendered via SVG */
+
+.icon-check,
+.icon-cross {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.icon-check {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' fill='%234caf50'/></svg>");
+}
+
+.icon-cross {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z' fill='%23f44336'/></svg>");
+}
+
+/* Alert component — SVG icons via ::before, no text emoji */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  background-color: var(--light-bg);
+}
+
+.alert::before {
+  content: '';
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.alert.info {
+  border-left: 3px solid #2196f3;
+}
+
+.alert.info::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z' fill='%232196f3'/></svg>");
+}
+
+.alert.success {
+  border-left: 3px solid #4caf50;
+}
+
+.alert.success::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z' fill='%234caf50'/></svg>");
+}
+
+.alert.warning {
+  border-left: 3px solid #ff9800;
+}
+
+.alert.warning::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' fill='%23ff9800'/></svg>");
+}
+
+.alert.error {
+  border-left: 3px solid #f44336;
+}
+
+.alert.error::before {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z' fill='%23f44336'/></svg>");
+}
+
+/* ===== BLOCKQUOTE ===== */
+
+blockquote {
+  border-left: 4px solid var(--border-light);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  font-style: italic;
+}
+
+/* ===== CUSTOM COMPONENTS ===== */
+
+/* Important/Alert block */
+.important,
+.alert-important {
+  border-left: 4px solid var(--border-light);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: #fafafa;
+  color: var(--dark-text);
+}
+
+.important strong {
+  color: var(--dark-text);
+}
+
+/* Parameter-Value table */
+.params-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.params-table tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.params-table td {
+  padding: 1rem;
+  border: none;
+}
+
+.params-table td:first-child {
+  font-weight: 700;
+  color: var(--dark-text);
+  width: 30%;
+  background-color: #f5f5f5;
+}
+
+.params-table td:last-child {
+  color: var(--dark-text);
+  background-color: #ffffff;
+}
+
+.params-table tr:hover td {
+  background-color: #fafafa;
+}
+
+/* Data table style */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+}
+
+.data-table th {
+  background-color: var(--light-bg);
+  color: #2c3e50;
+  /* Dark blue text */
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid #2c3e50 !important;
+  /* Dark blue border for tables */
+}
+
+.data-table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.card:hover {
+  border-color: #2c3e50;
+  /* Dark blue border on hover as requested */
+  box-shadow: 0 12px 32px rgba(44, 62, 80, 0.2);
+  /* Darker blue-ish shadow */
+  transform: translateY(-4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card h4 {
+  margin-top: 0;
+  color: var(--dark-text);
+  font-size: 1.3rem;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 1.5rem !important;
+  flex-grow: 1 !important;
+}
+
+.card .md-button {
+  align-self: flex-start !important;
+  margin-top: auto !important;
+}
+
+.card h3 {
+  width: 100%;
+  display: block;
+  margin-top: 1.5rem;
+  border-top: none;
+}
+
+.card h3:first-child {
+  margin-top: 0;
+}
+
+/* Process Flow Component */
+.process-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.process-box {
+  flex: 1;
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.process-box:hover {
+  border-color: #ed1c24;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.process-box strong {
+  color: #ed1c24;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.process-box span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.process-arrow {
+  flex-shrink: 0;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z' fill='%23ed1c24'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .process-container {
+    flex-direction: column;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg);
+    margin: 5px 0;
+  }
+
+  .process-box {
+    width: 100%;
+    min-height: 80px;
+  }
+}
+
+/* Grid layout with big spacing */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(calc(50% - 1rem), 1fr));
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(calc(33.333% - 1.33rem), 1fr));
+}
+
+/* Stats/KPI cards */
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--gray-text);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stat-card .label {
+  font-size: 15px;
+  color: var(--dark-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.stat-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0.75rem 0;
+}
+
+.stat-card .trend {
+  font-size: 14px;
+  margin-top: 0.75rem;
+  color: var(--dark-text);
+}
+
+/* Section divider */
+.section-divider {
+  border-bottom: 1px solid var(--border-light);
+  margin: 3rem 0;
+  padding-bottom: 1rem;
+}
+
+/* ===== CONTENT BLOCK SEPARATION ===== */
+
+/* Add visual separation between content blocks */
+.md-typeset h2~p+h3,
+.md-typeset h2~ul+h3,
+.md-typeset h2~ol+h3,
+.md-typeset h2~table+h3,
+.md-typeset h3~p+h4,
+.md-typeset h3~ul+h4,
+.md-typeset h3~ol+h4 {
+  margin-top: 3rem;
+}
+
+/* Paragraphs followed by lists - add spacing */
+.md-typeset p+ul,
+.md-typeset p+ol {
+  margin-top: -0.5rem;
+}
+
+/* Tables should have clear separation */
+.md-typeset table {
+  margin: 2rem 0 2.5rem 0;
+}
+
+/* Lists followed by content */
+.md-typeset ul+p,
+.md-typeset ol+p {
+  margin-top: 1.5rem;
+}
+
+/* Admonitions/callouts need separation */
+.md-typeset .admonition,
+.md-typeset details {
+  margin: 2rem 0;
+  border-left: 3px solid var(--border-light);
+}
+
+/* Code blocks separation */
+.md-typeset pre {
+  margin: 2rem 0;
+}
+
+/* Blockquotes separation */
+.md-typeset blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-left: 4px solid var(--border-light);
+  background: var(--light-bg);
+}
+
+/* Definition lists */
+.md-typeset dl {
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #f5f5f5;
+}
+
+.md-typeset dt {
+  font-weight: 700;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
+
+.md-typeset dd {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== MKDOCS OVERRIDES ===== */
+
+/* Remove all red from Material theme */
+.md-typeset a,
+.md-nav__link,
+.md-footer__link {
+  color: var(--dark-text) !important;
+  border-color: var(--border-light) !important;
+}
+
+.md-typeset a:hover,
+.md-nav__link:hover {
+  color: var(--dark-text) !important;
+}
+
+/* Remove red accents */
+/* Buttons handled at end of file */
+
+.md-header {
+  background-color: #333333 !important;
+  border-bottom: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 4rem;
+  /* Fixed height for better control */
+  display: flex !important;
+  align-items: center !important;
+}
+
+.md-header__inner {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 1220px !important;
+  /* Standard content width for alignment */
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+.md-header__title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  /* Slightly larger as requested earlier */
+  font-family: Helvetica, Arial, sans-serif !important;
+  padding-top: 4px;
+  /* "Опустить чуть ниже" to look vertically centered */
+  margin-left: 0 !important;
+  /* Align with content container start */
+}
+
+.md-header__button {
+  color: #ffffff !important;
+}
+
+.md-nav__link,
+.md-sidebar .md-nav__link,
+.md-sidebar--primary .md-nav__link,
+a.md-nav__link {
+  color: var(--dark-text) !important;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  border-left: none !important;
+  border: none !important;
+  padding-left: 8px;
+  transition: all 150ms ease;
+  text-transform: none !important;
+}
+
+.md-nav__link:hover,
+.md-sidebar .md-nav__link:hover,
+a.md-nav__link:hover {
+  color: var(--dark-text) !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.md-nav__link--active,
+.md-sidebar .md-nav__link--active,
+a.md-nav__link--active {
+  color: var(--dark-text) !important;
+  font-weight: 700 !important;
+}
+
+/* Parent categories in active path stay dark but bold */
+.md-nav__item--active>.md-nav__link:not(.md-nav__link--active) {
+  color: var(--dark-text) !important;
+  font-weight: 700 !important;
+}
+
+.md-nav__item {
+  color: var(--dark-text) !important;
+}
+
+/* Sidebar Spacing - no lines, no extra padding */
+.md-sidebar--primary .md-nav__list>.md-nav__item:first-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.md-sidebar--primary .md-nav__list>.md-nav__item:last-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Ensure no other borders in the menu — match Material's exact selector to guarantee override */
+.md-nav--primary .md-nav__item {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* AGGRESSIVE: Remove ALL borders from sidebar navigation */
+.md-sidebar--primary .md-nav,
+.md-sidebar--primary .md-nav__list,
+.md-sidebar--primary .md-nav__item,
+.md-sidebar--primary .md-nav__link,
+.md-sidebar .md-nav,
+.md-sidebar .md-nav__list,
+.md-sidebar .md-nav__item,
+.md-sidebar .md-nav__link,
+.md-nav--primary,
+.md-nav--primary .md-nav,
+.md-nav--primary .md-nav__list,
+.md-nav--primary .md-nav__link {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Remove any hr or dividers in nav */
+.md-sidebar hr,
+.md-nav hr,
+.md-sidebar--primary hr {
+  display: none !important;
+}
+
+/* Remove borders from nested nav items */
+.md-nav__item .md-nav,
+.md-nav__item .md-nav__list,
+.md-nav__item .md-nav__item,
+.md-nav .md-nav,
+.md-nav .md-nav__list,
+.md-nav .md-nav__item {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove any visual separators created by pseudo-elements */
+.md-sidebar--primary *::before,
+.md-sidebar--primary *::after {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Menu text styling - no auto transform, use markdown capitalization */
+/* .md-nav__link { text-transform removed - use proper case in mkdocs.yml } */
+
+/* Hide info icons and emojis from menu - ALL instances */
+.md-nav__icon {
+  display: none !important;
+}
+
+.md-nav__link::before,
+.md-nav__link::after {
+  content: none !important;
+  display: none !important;
+}
+
+.md-nav__toggle {
+  display: none !important;
+}
+
+/* Remove all pseudo elements from nav */
+.md-nav__item::before,
+.md-nav__item::after {
+  display: none !important;
+}
+
+/* Hide tooltip/title attributes */
+.md-nav__link[title],
+.md-nav__item[title] {
+  position: relative;
+}
+
+.md-nav__link[title]:hover::after,
+.md-nav__item[title]:hover::after {
+  display: none !important;
+}
+
+/* Disable all tooltips globally */
+[title],
+[data-md-hint],
+[data-md-tooltip] {
+  pointer-events: none !important;
+}
+
+/* Hide info icons that appear as text or elements */
+.md-nav__link>.md-icon,
+.md-nav__item>.md-icon {
+  display: none !important;
+}
+
+/* Hide any SVG or info elements */
+.md-nav__link svg,
+.md-nav__item svg {
+  display: none !important;
+}
+
+/* Remove hover tooltip behavior */
+.md-tooltip {
+  display: none !important;
+}
+
+/* Hide material icons */
+.material-icons {
+  display: none !important;
+}
+
+/* Disable browser default tooltip */
+*:not(input):not(textarea) {
+  pointer-events: auto;
+}
+
+*[title]:not(input):not(textarea) {
+  pointer-events: auto;
+  text-decoration: none !important;
+}
+
+.md-nav [title]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hide info icon in circle (status indicators like "draft") - AGGRESSIVE REMOVAL */
+.md-status,
+.md-nav__status,
+.md-nav__info {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide any circle info badges or status markers in navigation */
+.md-nav__link>.md-status,
+.md-nav__item>.md-status,
+.md-nav__link>span[title],
+.md-nav__item>span[title] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide material info icons */
+.md-icon--info {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Generic icon hiding for nav - all SVG */
+.md-nav__link svg,
+.md-nav__item svg,
+.md-nav svg {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Hide all info/help icons in entire nav */
+.md-nav .md-icon,
+.md-nav [class*="icon"],
+.md-nav [class*="info"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Remove pseudo elements that might be icons */
+.md-nav__link::before,
+.md-nav__link::after,
+.md-nav__item::before,
+.md-nav__item::after {
+  display: none !important;
+  visibility: hidden !important;
+  content: none !important;
+}
+
+/* Hide any span or element with "i" or tooltip text in nav - NUCLEAR OPTION */
+.md-nav span[role="img"],
+.md-nav [aria-label],
+.md-nav [data-md-status],
+.md-nav .md-status {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide navigation title in sidebar */
+.md-sidebar--primary .md-nav__title {
+  display: none !important;
+}
+
+/* Specifically prevent tooltips on truncated text in nav */
+.md-nav__link .md-ellipsis,
+.md-nav__link {
+  pointer-events: auto !important;
+}
+
+/* Make top-level menu items bold */
+.md-nav__title {
+  font-weight: 700 !important;
+}
+
+.md-nav--primary>.md-nav__list>.md-nav__item>.md-nav__link {
+  font-weight: 700 !important;
+}
+
+.md-sidebar {
+  background-color: #ffffff;
+}
+
+/* Stretch layout to full screen width */
+.md-container {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-main {
+  background-color: #ffffff;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-grow: 1 !important;
+}
+
+.md-content {
+  max-width: 100% !important;
+  padding: 2rem;
+  width: 100% !important;
+  flex-grow: 1 !important;
+}
+
+/* Remove constraints from Material theme */
+.md-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  gap: 0 !important;
+}
+
+.md-header {
+  width: 100vw !important;
+}
+
+/* Ensure sidebars are flexible */
+.md-sidebar {
+  width: auto !important;
+  min-width: 250px;
+}
+
+.md-sidebar--primary {
+  flex: 0 0 auto !important;
+}
+
+/* Table of contents - allow to take appropriate space */
+.md-sidebar--secondary {
+  width: auto !important;
+  min-width: 200px;
+  flex: 0 0 auto !important;
+}
+
+/* Wrapper for full width */
+.md-root {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.md-footer {
+  background-color: var(--light-bg);
+  border-top: 1px solid var(--border-light);
+  color: var(--dark-text);
+  font-size: 12px;
+}
+
+.md-footer__inner {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Remove Material theme primary color */
+/* Fixed buttons at end of file */
+
+/* Remove red from nav underlines and borders */
+.md-nav__item--active>.md-nav__link {
+  border-left-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove all borders from nav items */
+.md-nav__item {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Table of contents styling */
+.md-sidebar--secondary {
+  background-color: transparent !important;
+}
+
+.md-sidebar--secondary .md-nav__title {
+  color: var(--dark-text) !important;
+  font-weight: 700 !important;
+  padding: 1rem 0.5rem;
+}
+
+.md-sidebar--secondary .md-nav__link {
+  color: var(--dark-text) !important;
+  opacity: 0.7;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+  opacity: 1;
+  color: var(--dark-text) !important;
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--dark-text) !important;
+  opacity: 1;
+  font-weight: 700;
+}
+
+.md-toc a {
+  color: var(--dark-text) !important;
+}
+
+.md-toc a:hover {
+  color: var(--dark-text) !important;
+}
+
+/* Reduce table of contents depth - hide deeper levels */
+.md-toc__list .md-toc__list .md-toc__list {
+  display: none !important;
+}
+
+/* Show only 2 levels in TOC */
+.md-toc__item>ul>li>ul {
+  display: none !important;
+}
+
+/* Remove red from inline code and other elements */
+.md-typeset .md-typeset__table {
+  color: var(--dark-text) !important;
+}
+
+.md-typeset kbd {
+  background-color: var(--light-bg) !important;
+  color: var(--dark-text) !important;
+  border-color: var(--border-light) !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin: 2rem 0 0.75rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  h4 {
+    padding-top: 0.75rem;
+    border-top: 1px solid #f5f5f5;
+  }
+
+  .grid,
+  .grid.cols-2,
+  .grid.cols-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  table {
+    font-size: 13px;
+    margin: 1.5rem 0;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin: 2rem 0 0.75rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  h3 {
+    padding-top: 0.75rem;
+  }
+
+  h4 {
+    padding-top: 0.5rem;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0.75rem;
+  }
+
+  table {
+    font-size: 12px;
+    margin: 1rem 0;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  .md-content {
+    padding: 1rem;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--dark-text);
+  outline-offset: 2px;
+}
+
+/* ===== PRINT ===== */
+
+@media print {
+
+  .md-header,
+  .md-sidebar,
+  .md-footer {
+    display: none;
+  }
+
+  a {
+    color: var(--dark-text);
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2 {
+    page-break-after: avoid;
+  }
+}
+
+/* ===== COLOR OVERRIDES ===== */
+
+* {
+  --md-primary-fg-color: #2c3e50 !important;
+  --md-accent-fg-color: #ed1c24 !important;
+}
+
+[style*="color: #f14646"],
+[style*="color: #ef4444"],
+[style*="background: #f14646"],
+[style*="background: #ef4444"] {
+  color: var(--dark-text) !important;
+  background-color: transparent !important;
+  border-color: var(--border-light) !important;
+}
+
+/* Replace green colors with red */
+[style*="color: #00c753"],
+[style*="color: #1abc9c"],
+[style*="color: #27ae60"],
+[style*="color: #2ecc71"],
+[style*="color: #10b981"],
+[style*="color: rgb(0, 200"],
+[style*="color: rgb(1, 188"],
+[style*="color: rgb(39, 174"],
+[style*="color: rgb(46, 204"],
+[style*="color: rgb(16, 185"] {
+  color: #ed1c24 !important;
+}
+
+/* Target all green text and replace with red */
+.md-typeset .trend.up,
+.md-typeset .status.success,
+.md-typeset .alert.success {
+  color: #ed1c24 !important;
+}
+
+/* Stat card values - use red */
+.stat-card .value {
+  color: #ed1c24 !important;
+}
+
+/* ===== CONTENT HIDING RULES ===== */
+
+/* Hide sections using display: none and visibility */
+/* This requires modifying the markdown files to add data attributes or classes */
+
+.md-typeset a:not(.md-button),
+.md-tabs__link,
+.md-tabs__item,
+.md-footer__link,
+.md-toc a,
+.md-toc__link {
+  color: var(--dark-text) !important;
+  /* Content links - dark text */
+}
+
+.md-typeset a:focus,
+.md-tabs__link:focus,
+.md-footer__link:focus {
+  color: var(--dark-text) !important;
+}
+
+/* Remove red underlines and fix text decoration */
+.md-typeset a {
+  border-bottom-color: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Consolidated Button Styles */
+.md-typeset .md-button,
+.md-typeset .md-button--primary,
+.md-typeset a.md-button,
+.md-typeset a.md-button:visited {
+  background-color: #ed1c24 !important;
+  color: #ffffff !important;
+  border: 1px solid #ed1c24 !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1.6rem !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button--primary:hover,
+.md-typeset a.md-button:hover {
+  background-color: #d11a21 !important;
+  border-color: #d11a21 !important;
+  opacity: 0.9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  text-decoration: none !important;
+}

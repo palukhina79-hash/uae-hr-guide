@@ -1,0 +1,43 @@
+site_name: UAE HR Guide
+theme:
+  name: material
+  palette:
+    - scheme: light
+      primary: slate
+      accent: slate
+  font:
+    text: Helvetica
+    code: Roboto Mono
+  language: ru
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+extra_css:
+  - stylesheets/brand.css
+nav:
+  - Home: index.md
+  - Трудовой кодекс:
+    - Обзор законодательства: 01_трудовой_кодекс/011_overview.md
+    - Трудовые контракты: 01_трудовой_кодекс/012_трудовые_контракты.md
+    - Рабочее время: 01_трудовой_кодекс/013_рабочее_время.md
+    - Отпуска: 01_трудовой_кодекс/014_отпуска.md
+    - Дисциплина: 01_трудовой_кодекс/015_дисциплина.md
+  - Визы и разрешения:
+    - Employment Visa: 02_визы_и_разрешения/021_employment_visa.md
+    - Work Permit: 02_визы_и_разрешения/022_work_permit.md
+    - Emirates ID: 02_визы_и_разрешения/023_emirates_id.md
+    - Смена спонсора: 02_визы_и_разрешения/024_смена_спонсора.md
+    - Отмена визы: 02_визы_и_разрешения/025_отмена_визы.md
+  - WPS и Payroll:
+    - WPS Overview: 03_wps_и_payroll/031_wps_overview.md
+    - Расчёт зарплаты: 03_wps_и_payroll/032_расчёт_зарплаты.md
+    - End of Service: 03_wps_и_payroll/033_end_of_service.md
+  - Наём и онбординг:
+    - Процесс найма: 04_наём_и_онбординг/041_процесс_найма.md
+    - Offer Letter: 04_наём_и_онбординг/042_offer_letter.md
+    - Испытательный срок: 04_наём_и_онбординг/043_probation.md
+  - Увольнение:
+    - Расторжение контракта: 05_увольнение/051_расторжение_контракта.md
+    - Notice Period: 05_увольнение/052_notice_period.md
+    - Final Settlement: 05_увольнение/053_final_settlement.md
