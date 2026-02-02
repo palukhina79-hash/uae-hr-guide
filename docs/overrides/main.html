@@ -7,39 +7,57 @@
 
 {% block extrahead %}
 <style>
-  /* Inject logo as data URL to avoid path issues */
-  .md-sidebar--primary .sidebar-brand {
+  /* Inline essential styles to prevent FOUC and path issues */
+  :root {
+    --header-height: 4rem;
+  }
+
+  .md-header {
+    background: #ffffff !important;
+    color: var(--dark-text) !important;
+    border-bottom: 1px solid var(--border-light);
+    height: var(--header-height);
+  }
+
+  .md-header__inner {
+    display: grid !important;
+    grid-template-columns: 80px 1fr 280px !important;
+    /* Left menu | Center breadcrumbs | Right search */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+    height: 100%;
+  }
+
+  .header-left {
     display: flex;
     align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border-light);
-    gap: 0.75rem;
-    background: #ffffff;
   }
 
-  .sidebar-brand__logo {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
+  .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
 
-  .sidebar-brand__text {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--dark-text);
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1rem;
   }
 
-  /* Custom breadcrumbs in header */
   .custom-breadcrumbs {
-    flex: 1;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: var(--gray-text);
-    padding: 0 2rem;
+    white-space: nowrap;
   }
 
   .custom-breadcrumbs a {
@@ -55,38 +73,108 @@
     color: var(--dark-text);
     font-weight: 600;
   }
+
+  .sidebar-brand {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    gap: 0.75rem;
+    background: #ffffff;
+    height: 80px;
+  }
+
+  .sidebar-brand__logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-brand__text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-text);
+  }
+
+  /* Chevron Styling */
+  .md-nav__item--nested>.md-nav__link::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 0.5rem;
+  }
+
+  .md-nav__item--active>.md-nav__link::after {
+    transform: rotate(90deg);
+  }
 </style>
 {% endblock %}
 
 {% block header %}
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <div class="md-header__inner">
 
-    <label class="md-header__button md-icon" for="__drawer">
-      {% include ".icons/material/menu.svg" %}
-    </label>
-
-    <div class="custom-breadcrumbs">
-      {% if page and page.parent %}
-      {% if page.parent.parent %}
-      <a href="{{ page.parent.parent.url | url }}">{{ page.parent.parent.title }}</a>
-      <span>/</span>
-      {% endif %}
-      <a href="{{ page.parent.url | url }}">{{ page.parent.title }}</a>
-      <span>/</span>
-      {% endif %}
-      <span class="current">{{ page.title if page else config.site_name }}</span>
+    <!-- Left: Mobile menu -->
+    <div class="header-left">
+      <label class="md-header__button md-icon" for="__drawer">
+        {% include ".icons/material/menu.svg" %}
+      </label>
     </div>
 
-    {% if config.theme.features and "search.suggest" in config.theme.features %}
-    <div class="md-header__option">
+    <!-- Center: Breadcrumbs -->
+    <div class="header-center">
+      <div class="custom-breadcrumbs">
+        {% if page and page.parent %}
+        {% if page.parent.parent %}
+        <a href="{{ page.parent.parent.url | url }}">{{ page.parent.parent.title }}</a>
+        <span>/</span>
+        {% endif %}
+        <a href="{{ page.parent.url | url }}">{{ page.parent.title }}</a>
+        <span>/</span>
+        {% endif %}
+        <span class="current">{{ page.title if page else config.site_name }}</span>
+      </div>
+    </div>
+
+    <!-- Right: Search -->
+    <div class="header-right">
+      <div class="md-search" data-md-component="search" role="dialog">
+        <label class="md-search__overlay" for="__search"></label>
+        <div class="md-search__inner" role="search">
+          <form class="md-search__form" name="search">
+            <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search"
+              autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"
+              data-md-component="search-query" required>
+            <label class="md-search__icon md-icon" for="__search">
+              {% include ".icons/material/magnify.svg" %}
+              {% include ".icons/material/close.svg" %}
+            </label>
+          </form>
+          <div class="md-search__output">
+            <div class="md-search__scrollwrap" data-md-scrollfix>
+              <div class="md-search-result" data-md-component="search-result">
+                <div class="md-search-result__meta">Initializing search</div>
+                <ol class="md-search-result__list"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
       </label>
     </div>
-    {% endif %}
 
-  </nav>
+  </div>
 </header>
 {% endblock %}
 
@@ -98,14 +186,13 @@
     <!-- Custom Logo + Brand Block -->
     <div class="sidebar-brand">
       <svg class="sidebar-brand__logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Modern geometric logo -->
         <rect x="10" y="40" width="15" height="50" fill="#16213e" />
         <rect x="30" y="30" width="15" height="60" fill="#16213e" />
         <rect x="50" y="20" width="15" height="70" fill="#16213e" />
         <rect x="70" y="10" width="15" height="80" fill="#16213e" />
         <path d="M 15 45 L 35 25 L 55 35" stroke="#ed1c24" stroke-width="4" fill="none" stroke-linecap="round"
           stroke-linejoin="round" />
-        <polygon points="50,30 60,25 55,35" fill="#ed1c24" />
+        <polygon points="53,32 63,27 58,37" fill="#ed1c24" />
       </svg>
       <span class="sidebar-brand__text">{{ config.site_name }}</span>
     </div>
