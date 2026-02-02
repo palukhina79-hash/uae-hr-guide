@@ -683,16 +683,16 @@ blockquote {
 /* ===== MKDOCS OVERRIDES ===== */
 
 /* Remove all red from Material theme */
-.md-typeset a,
+.md-typeset a:not(.md-button),
 .md-nav__link,
 .md-footer__link,
-.md-typeset a:visited,
+.md-typeset a:not(.md-button):visited,
 .md-nav__link:visited {
   color: var(--dark-text) !important;
   border-color: var(--border-light) !important;
 }
 
-.md-typeset a:hover,
+.md-typeset a:not(.md-button):hover,
 .md-nav__link:hover {
   color: var(--dark-text) !important;
 }
