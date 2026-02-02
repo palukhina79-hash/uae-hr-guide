@@ -1359,14 +1359,14 @@ button:focus-visible {
   text-decoration: none !important;
 }
 
-/* Consolidated Button Styles */
+/* Consolidated Button Styles - Design Rule: Кнопки "Перейти" всегда красные */
 .md-typeset .md-button,
 .md-typeset .md-button--primary,
 .md-typeset a.md-button,
 .md-typeset a.md-button:visited {
-  background-color: #ed1c24 !important;
-  color: #ffffff !important;
-  border: 1px solid #ed1c24 !important;
+  background-color: #dc2626 !important; /* Red - Design Rule */
+  color: #ffffff !important; /* White text - Design Rule */
+  border: 1px solid #dc2626 !important;
   font-weight: 700 !important;
   padding: 0.6rem 1.6rem !important;
   border-radius: 4px !important;
@@ -1380,9 +1380,43 @@ button:focus-visible {
 .md-typeset .md-button:hover,
 .md-typeset .md-button--primary:hover,
 .md-typeset a.md-button:hover {
-  background-color: #d11a21 !important;
-  border-color: #d11a21 !important;
+  background-color: #b91c1c !important; /* Darker red on hover - Design Rule */
+  border-color: #b91c1c !important;
   opacity: 0.9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  text-decoration: none !important;
+}
+
+/* Card navigation links - Design Rule: Кнопки "Перейти" в карточках */
+/* MUST be after all other link styles to override them */
+.md-typeset .grid.cards li p a,
+.md-typeset .grid.cards li p a:visited,
+.md-typeset .grid.cards li p a:focus {
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  border: 1px solid #dc2626 !important;
+  border-color: #dc2626 !important;
+  font-weight: 700 !important;
+  padding: 0.6rem 1.6rem !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  display: inline-block !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  margin-top: 0.5rem !important;
+}
+
+.md-typeset .grid.cards li p a .twemoji,
+.md-typeset .grid.cards li p a svg {
+  fill: #ffffff !important;
+}
+
+.md-typeset .grid.cards li p a:hover,
+.md-typeset .grid.cards li p a:hover:focus {
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
   color: #ffffff !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
   text-decoration: none !important;
