@@ -162,8 +162,7 @@ em {
 /* ===== LINKS ===== */
 
 a {
-  color: #ed1c24 !important;
-  /* All links red as requested */
+  color: var(--dark-text);
   text-decoration: none;
   transition: all 150ms ease;
 }
@@ -174,7 +173,7 @@ a:hover {
 }
 
 a:visited {
-  color: #ed1c24 !important;
+  color: var(--dark-text);
 }
 
 /* ===== CODE ===== */
@@ -686,7 +685,9 @@ blockquote {
 /* Remove all red from Material theme */
 .md-typeset a,
 .md-nav__link,
-.md-footer__link {
+.md-footer__link,
+.md-typeset a:visited,
+.md-nav__link:visited {
   color: var(--dark-text) !important;
   border-color: var(--border-light) !important;
 }
@@ -795,7 +796,7 @@ a.md-nav__link--active {
   color: var(--dark-text) !important;
   font-weight: 600 !important;
   background-color: var(--light-bg) !important;
-  border-left: 3px solid #ed1c24 !important;
+  border-left: 3px solid var(--dark-text) !important;
 }
 
 /* Chevron icon for expandable items */
@@ -1359,7 +1360,7 @@ button:focus-visible {
 
 * {
   --md-primary-fg-color: #2c3e50 !important;
-  --md-accent-fg-color: #ed1c24 !important;
+  --md-accent-fg-color: var(--dark-text) !important;
 }
 
 [style*="color: #f14646"],
@@ -1403,6 +1404,7 @@ button:focus-visible {
 /* This requires modifying the markdown files to add data attributes or classes */
 
 .md-typeset a:not(.md-button),
+.md-typeset a:not(.md-button):visited,
 .md-tabs__link,
 .md-tabs__item,
 .md-footer__link,

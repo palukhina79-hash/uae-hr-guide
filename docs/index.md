@@ -6,48 +6,36 @@
 
 ## Разделы
 
-<div class="grid cards" markdown>
+<div class="grid cols-3">
+<div class="card">
+<h4>Трудовой кодекс</h4>
+<p>Законодательство ОАЭ, трудовые контракты, рабочее время, отпуска.</p>
+<a href="01_трудовой_кодекс/011_overview.md" class="md-button">Перейти →</a>
+</div>
 
--   :material-gavel:{ .lg .middle } **Трудовой кодекс**
+<div class="card">
+<h4>Визы и разрешения</h4>
+<p>Employment visa, work permit, Emirates ID, смена спонсора.</p>
+<a href="02_визы_и_разрешения/021_employment_visa.md" class="md-button">Перейти →</a>
+</div>
 
-    ---
+<div class="card">
+<h4>WPS и Payroll</h4>
+<p>Wage Protection System, расчёт зарплаты, end of service gratuity.</p>
+<a href="03_wps_и_payroll/031_wps_overview.md" class="md-button">Перейти →</a>
+</div>
 
-    Законодательство ОАЭ, трудовые контракты, рабочее время, отпуска
+<div class="card">
+<h4>Наём и онбординг</h4>
+<p>Процесс найма, offer letter, испытательный срок.</p>
+<a href="04_наём_и_онбординг/041_процесс_найма.md" class="md-button">Перейти →</a>
+</div>
 
-    [:octicons-arrow-right-24: Перейти](01_трудовой_кодекс/011_overview.md)
-
--   :material-passport:{ .lg .middle } **Визы и разрешения**
-
-    ---
-
-    Employment visa, work permit, Emirates ID, смена спонсора
-
-    [:octicons-arrow-right-24: Перейти](02_визы_и_разрешения/021_employment_visa.md)
-
--   :material-cash:{ .lg .middle } **WPS и Payroll**
-
-    ---
-
-    Wage Protection System, расчёт зарплаты, end of service gratuity
-
-    [:octicons-arrow-right-24: Перейти](03_wps_и_payroll/031_wps_overview.md)
-
--   :material-account-plus:{ .lg .middle } **Наём и онбординг**
-
-    ---
-
-    Процесс найма, offer letter, испытательный срок
-
-    [:octicons-arrow-right-24: Перейти](04_наём_и_онбординг/041_процесс_найма.md)
-
--   :material-account-minus:{ .lg .middle } **Увольнение**
-
-    ---
-
-    Расторжение контракта, notice period, final settlement
-
-    [:octicons-arrow-right-24: Перейти](05_увольнение/051_расторжение_контракта.md)
-
+<div class="card">
+<h4>Увольнение</h4>
+<p>Расторжение контракта, notice period, final settlement.</p>
+<a href="05_увольнение/051_расторжение_контракта.md" class="md-button">Перейти →</a>
+</div>
 </div>
 
 ---
