@@ -1,6 +1,7 @@
 site_name: UAE HR Guide
 theme:
   name: material
+  custom_dir: docs/overrides
   palette:
     - scheme: light
       primary: slate
@@ -12,7 +13,11 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.sections
+    - navigation.expand
     - content.code.copy
+    - search.suggest
+    - search.highlight
 extra_css:
   - stylesheets/brand.css
 markdown_extensions:

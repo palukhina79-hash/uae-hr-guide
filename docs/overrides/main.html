@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+<title>{% if page and page.meta and page.meta.title %}{{ page.meta.title }}{% elif page and page.title and not
+  page.is_homepage %}{{ page.title }} - {{ config.site_name }}{% else %}{{ config.site_name }}{% endif %}</title>
+{% endblock %}
+
+{% block extrahead %}
+<style>
+  /* Inject logo as data URL to avoid path issues */
+  .md-sidebar--primary .sidebar-brand {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+    gap: 0.75rem;
+    background: #ffffff;
+  }
+
+  .sidebar-brand__logo {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .sidebar-brand__text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-text);
+  }
+
+  /* Custom breadcrumbs in header */
+  .custom-breadcrumbs {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: var(--gray-text);
+    padding: 0 2rem;
+  }
+
+  .custom-breadcrumbs a {
+    color: var(--gray-text) !important;
+    text-decoration: none !important;
+  }
+
+  .custom-breadcrumbs a:hover {
+    color: var(--dark-text) !important;
+  }
+
+  .custom-breadcrumbs .current {
+    color: var(--dark-text);
+    font-weight: 600;
+  }
+</style>
+{% endblock %}
+
+{% block header %}
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+
+    <label class="md-header__button md-icon" for="__drawer">
+      {% include ".icons/material/menu.svg" %}
+    </label>
+
+    <div class="custom-breadcrumbs">
+      {% if page and page.parent %}
+      {% if page.parent.parent %}
+      <a href="{{ page.parent.parent.url | url }}">{{ page.parent.parent.title }}</a>
+      <span>/</span>
+      {% endif %}
+      <a href="{{ page.parent.url | url }}">{{ page.parent.title }}</a>
+      <span>/</span>
+      {% endif %}
+      <span class="current">{{ page.title if page else config.site_name }}</span>
+    </div>
+
+    {% if config.theme.features and "search.suggest" in config.theme.features %}
+    <div class="md-header__option">
+      <label class="md-header__button md-icon" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+      </label>
+    </div>
+    {% endif %}
+
+  </nav>
+</header>
+{% endblock %}
+
+{% block site_nav %}
+{% if nav %}
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+  <div class="md-sidebar__scrollwrap">
+
+    <!-- Custom Logo + Brand Block -->
+    <div class="sidebar-brand">
+      <svg class="sidebar-brand__logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Modern geometric logo -->
+        <rect x="10" y="40" width="15" height="50" fill="#16213e" />
+        <rect x="30" y="30" width="15" height="60" fill="#16213e" />
+        <rect x="50" y="20" width="15" height="70" fill="#16213e" />
+        <rect x="70" y="10" width="15" height="80" fill="#16213e" />
+        <path d="M 15 45 L 35 25 L 55 35" stroke="#ed1c24" stroke-width="4" fill="none" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <polygon points="50,30 60,25 55,35" fill="#ed1c24" />
+      </svg>
+      <span class="sidebar-brand__text">{{ config.site_name }}</span>
+    </div>
+
+    <div class="md-sidebar__inner">
+      {% include "partials/nav.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if page.toc and (page.toc | first is defined) %}
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      {% include "partials/toc.html" %}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

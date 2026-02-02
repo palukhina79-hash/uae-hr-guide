@@ -699,94 +699,148 @@ blockquote {
 /* Remove red accents */
 /* Buttons handled at end of file */
 
-/* ===== MODERN HEADER DESIGN ===== */
+/* ===== MODERN HEADER WITH BREADCRUMBS ===== */
 
 .md-header {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-  height: 4.5rem;
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  height: 4rem;
   display: flex !important;
   align-items: center !important;
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.md-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(237, 28, 36, 0.6) 25%,
-      rgba(237, 28, 36, 0.8) 50%,
-      rgba(237, 28, 36, 0.6) 75%,
-      transparent 100%);
-  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 .md-header__inner {
   display: flex !important;
   align-items: center !important;
+  justify-content: space-between !important;
   width: 100% !important;
-  max-width: 1220px !important;
-  margin: 0 auto !important;
-  padding: 0 2rem !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 1.5rem !important;
+  gap: 1.5rem;
 }
 
-.md-header__title {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 1.4rem !important;
-  font-family: Helvetica, Arial, sans-serif !important;
-  letter-spacing: 0.5px;
-  margin-left: 0 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.md-header__title::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #ed1c24, #ff4757);
-  transition: width 0.3s ease;
-}
-
-.md-header__title:hover::after {
-  width: 100%;
-}
-
+/* Hamburger menu button */
 .md-header__button {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--dark-text) !important;
   transition: all 0.3s ease;
   border-radius: 8px;
   padding: 0.5rem;
+  margin: 0;
+  flex-shrink: 0;
 }
 
 .md-header__button:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-  transform: scale(1.05);
+  background-color: var(--light-bg) !important;
+  color: var(--dark-text) !important;
 }
 
-/* Scrolled state - more compact and subtle */
-.md-header.md-header--shadow {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-  height: 4rem;
+/* Custom breadcrumbs - override template styles */
+.custom-breadcrumbs {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+  color: var(--gray-text) !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
+.custom-breadcrumbs a {
+  color: var(--gray-text) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.custom-breadcrumbs a:hover {
+  color: var(--dark-text) !important;
+}
+
+.custom-breadcrumbs .current {
+  color: var(--dark-text) !important;
+  font-weight: 600 !important;
+}
+
+.custom-breadcrumbs span:not(.current) {
+  color: var(--border-light) !important;
+}
+
+/* Search on the right */
+.md-header__option {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.md-search {
+  position: relative;
+}
+
+.md-search__form {
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  min-width: 200px;
+}
+
+.md-search__form:hover,
+.md-search__form:focus-within {
+  border-color: var(--dark-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.md-search__input {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: var(--dark-text);
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.md-search__input::placeholder {
+  color: var(--gray-text);
+}
+
+.md-search__icon {
+  color: var(--gray-text);
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== SIDEBAR WITH LOGO + BRAND ===== */
+
+.md-sidebar--primary {
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-light);
+  width: 280px !important;
+  padding: 0;
+}
+
+/* Sidebar inner content */
+.md-sidebar__scrollwrap {
+  overflow-y: auto;
+}
+
+.md-sidebar__inner {
+  padding-top: 0.5rem;
+}
+
+
+/* Navigation styling */
 .md-nav__link,
 .md-sidebar .md-nav__link,
 .md-sidebar--primary .md-nav__link,
@@ -794,16 +848,22 @@ a.md-nav__link {
   color: var(--dark-text) !important;
   font-size: 14px;
   font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
   border-left: none !important;
   border: none !important;
-  padding-left: 8px;
+  padding: 0.75rem 1.5rem !important;
   transition: all 150ms ease;
   text-transform: none !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .md-nav__link:hover,
 .md-sidebar .md-nav__link:hover,
 a.md-nav__link:hover {
+  background-color: var(--light-bg) !important;
   color: var(--dark-text) !important;
   border: none !important;
   text-decoration: none !important;
@@ -813,17 +873,50 @@ a.md-nav__link:hover {
 .md-sidebar .md-nav__link--active,
 a.md-nav__link--active {
   color: var(--dark-text) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+  background-color: var(--light-bg) !important;
+  border-left: 3px solid #ed1c24 !important;
+}
+
+/* Chevron icon for expandable items */
+.md-nav__item--nested>.md-nav__link::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666666'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Rotate chevron when expanded */
+.md-nav__item--active>.md-nav__link::after,
+.md-nav__toggle:checked~.md-nav__link::after {
+  transform: rotate(90deg);
+}
+
+/* Nested navigation items */
+.md-nav__item .md-nav {
+  padding-left: 0;
+}
+
+.md-nav__item .md-nav .md-nav__link {
+  padding-left: 3rem !important;
+  font-size: 13px;
 }
 
 /* Parent categories in active path stay dark but bold */
 .md-nav__item--active>.md-nav__link:not(.md-nav__link--active) {
   color: var(--dark-text) !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
 }
 
 .md-nav__item {
   color: var(--dark-text) !important;
+  margin: 0;
 }
 
 /* Sidebar Spacing - no lines, no extra padding */
@@ -1411,16 +1504,14 @@ button:focus-visible {
   text-decoration: none !important;
 }
 
-/* Consolidated Button Styles - Design Rule: Кнопки "Перейти" всегда красные */
+/* Consolidated Button Styles */
 .md-typeset .md-button,
 .md-typeset .md-button--primary,
 .md-typeset a.md-button,
 .md-typeset a.md-button:visited {
-  background-color: #dc2626 !important;
-  /* Red - Design Rule */
+  background-color: #ed1c24 !important;
   color: #ffffff !important;
-  /* White text - Design Rule */
-  border: 1px solid #dc2626 !important;
+  border: 1px solid #ed1c24 !important;
   font-weight: 700 !important;
   padding: 0.6rem 1.6rem !important;
   border-radius: 4px !important;
@@ -1434,44 +1525,9 @@ button:focus-visible {
 .md-typeset .md-button:hover,
 .md-typeset .md-button--primary:hover,
 .md-typeset a.md-button:hover {
-  background-color: #b91c1c !important;
-  /* Darker red on hover - Design Rule */
-  border-color: #b91c1c !important;
+  background-color: #d11a21 !important;
+  border-color: #d11a21 !important;
   opacity: 0.9 !important;
-  color: #ffffff !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-  text-decoration: none !important;
-}
-
-/* Card navigation links - Design Rule: Кнопки "Перейти" в карточках */
-/* MUST be after all other link styles to override them */
-.md-typeset .grid.cards li p a,
-.md-typeset .grid.cards li p a:visited,
-.md-typeset .grid.cards li p a:focus {
-  background-color: #dc2626 !important;
-  color: #ffffff !important;
-  border: 1px solid #dc2626 !important;
-  border-color: #dc2626 !important;
-  font-weight: 700 !important;
-  padding: 0.6rem 1.6rem !important;
-  border-radius: 4px !important;
-  transition: all 0.2s ease !important;
-  display: inline-block !important;
-  text-align: center !important;
-  line-height: 1.2 !important;
-  text-decoration: none !important;
-  margin-top: 0.5rem !important;
-}
-
-.md-typeset .grid.cards li p a .twemoji,
-.md-typeset .grid.cards li p a svg {
-  fill: #ffffff !important;
-}
-
-.md-typeset .grid.cards li p a:hover,
-.md-typeset .grid.cards li p a:hover:focus {
-  background-color: #b91c1c !important;
-  border-color: #b91c1c !important;
   color: #ffffff !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
   text-decoration: none !important;
