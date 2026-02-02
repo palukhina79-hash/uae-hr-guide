@@ -1394,20 +1394,44 @@ button:focus-visible {
 .md-typeset .admonition.tip,
 .md-typeset .admonition.check {
   border-left-color: #ed1c24 !important;
+  border-color: #ed1c24 !important;
+  /* Full border if applied */
   color: #ed1c24 !important;
 }
 
+/* Force red background and border for admonition titles */
 .md-typeset .admonition.success>.admonition-title,
 .md-typeset .admonition.tip>.admonition-title,
-.md-typeset .admonition.check>.admonition-title {
+.md-typeset .admonition.check>.admonition-title,
+.md-typeset details.success>summary,
+.md-typeset details.tip>summary,
+.md-typeset details.check>summary {
   background-color: rgba(237, 28, 36, 0.05) !important;
   border-bottom-color: #ed1c24 !important;
 }
 
+/* Force red icons */
 .md-typeset .admonition.success>.admonition-title::before,
 .md-typeset .admonition.tip>.admonition-title::before,
-.md-typeset .admonition.check>.admonition-title::before {
+.md-typeset .admonition.check>.admonition-title::before,
+.md-typeset details.success>summary::before,
+.md-typeset details.tip>summary::before,
+.md-typeset details.check>summary::before {
   color: #ed1c24 !important;
+  background-color: #ed1c24 !important;
+  /* For some icon types */
+  -webkit-mask-image: var(--md-admonition-icon--tip);
+  mask-image: var(--md-admonition-icon--tip);
+}
+
+/* Global Material Theme Admonition Overrides */
+:root {
+  --md-admonition-fg-color--success: #ed1c24 !important;
+  --md-admonition-bg-color--success: rgba(237, 28, 36, 0.05) !important;
+  --md-admonition-fg-color--tip: #ed1c24 !important;
+  --md-admonition-bg-color--tip: rgba(237, 28, 36, 0.05) !important;
+  --md-admonition-fg-color--check: #ed1c24 !important;
+  --md-admonition-bg-color--check: rgba(237, 28, 36, 0.05) !important;
 }
 
 /* Stat card values - use red */
