@@ -212,7 +212,17 @@
 </div>
 {% endif %}
 
-{% block out_of_the_box_toc %}
-{{ super() }}
-{% endblock %}
+
+{% block footer %}
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+        <div style="color: #666; font-size: 0.8rem; margin-top: 1rem; text-align: center; width: 100%;">
+          Последнее обновление: 03.02.2026
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 {% endblock %}
